@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "mobcom",
   "version": "0.1.0",
   "private": true,
@@ -35,5 +36,35 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+=======
+  "name": "next-js",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "jose": "^5.9.3",
+    "next": "15.0.0-rc.0",
+    "react": "19.0.0-rc-5d19e1c8-20240923",
+    "react-dom": "19.0.0-rc-5d19e1c8-20240923",
+    "server-only": "^0.0.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.0-rc.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+>>>>>>> 6d800bf87525ef428999e052f3ec7f4bf3b10d63
   }
 }
