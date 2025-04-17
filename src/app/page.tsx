@@ -1,7 +1,11 @@
+import { LoginForm } from "./login/LoginForm";
+
+import  Pagelanding  from "./components/pagelanding";
+
 export default function Home() {
   return (
     <main>
-      <h1 className="text-2xl font-bold">Cosden Solutions</h1>
+      <Pagelanding/>
     </main>
   );
 }
