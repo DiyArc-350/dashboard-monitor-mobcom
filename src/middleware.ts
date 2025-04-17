@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
-import { decrypt } from "./app/lib/session";
+import { decrypt } from "@/app/lib/session"; // ✅ adjust path based on project structure
 
 const protectedRoutes = ["/dashboard"];
 const publicRoutes = ["/login"];
@@ -10,7 +10,7 @@ export default async function middleware(req: NextRequest) {
   const isProtectedRoute = protectedRoutes.includes(path);
   const isPublicRoute = publicRoutes.includes(path);
 
-  const cookie = cookies().get("session")?.value;
+  const cookie = (await cookies()).get("session")?.value;
   const session = await decrypt(cookie);
 
   if (isProtectedRoute && !session?.userId) {
