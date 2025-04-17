@@ -1,5 +1,3 @@
-import { LoginForm } from "./login/LoginForm";
-
 import  Pagelanding  from "./components/pagelanding";
 
 export default function Home() {
