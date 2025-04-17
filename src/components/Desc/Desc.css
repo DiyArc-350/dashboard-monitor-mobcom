@@ -1,0 +1,28 @@
+.App {
+    text-align: center;
+  }
+  
+  .besar {
+    color: red;
+    font-size: 3em;
+  }
+  
+  header {
+    max-width: 1000px; 
+    margin: 60px auto; 
+    background-color: rgba(122, 122, 122, 0.526); 
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  h1 {
+    color: black;
+    font-size: 2em; 
+    text-align: center; 
+  }
+  
+  p {
+    color: black;
+    font-size: 1.2em; 
+  }
+  
