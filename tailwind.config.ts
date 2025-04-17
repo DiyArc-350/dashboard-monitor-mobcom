@@ -23,6 +23,7 @@ const config: Config = {
       },
       fontFamily: {
         manrope: ["Manrope"],
+        cinzel: ['Cinzel', 'serif'],
       },
     },
   },
