@@ -15,27 +15,27 @@ export default function Dashboard() {
 
   useMqtt('ESP/sensor/AirQuality', (msg) => {
     setAirQuality(msg);
-  }, true);
+  });
 
   useMqtt('ESP/sensor/PPMValue', (msg) => {
     setPPMValue(msg);
-  }, true);
+  });
 
   useMqtt('ESP/sensor/Humidity', (msg) => {
     setHumidity(msg);
-  }, true);
+  });
 
   useMqtt('ESP/sensor/Temperature', (msg) => {
     setTemperature(msg);
-  }, true);
+  });
 
   useMqtt('ESP/sensor/Intensitas', (msg) => {
     setIntensity(msg);
-  }, true);
+  });
 
   const { publish } = useMqtt('ESP/sensor/LEDStatus', (msg) => {
     setLEDStatus(msg === '1');
-  }, true);
+  });
 
   const toggle = () => {
     const newState = !ledStatus;
