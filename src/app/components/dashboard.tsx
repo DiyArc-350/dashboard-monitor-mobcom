@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from 'next/navigation';
 import { useState } from "react";
 import { logout } from "../login/actions";
 import { useMqtt } from '@/app/hooks/useMqtt';
@@ -10,6 +11,7 @@ export default function Dashboard() {
   const [temperature, setTemperature] = useState("N/A");
   const [intensity, setIntensity] = useState("N/A");
   const [ledStatus, setLEDStatus] = useState(false);
+  const router = useRouter();
 
   useMqtt('ESP/sensor/AirQuality', (msg) => {
     setAirQuality(msg);
@@ -39,10 +41,6 @@ export default function Dashboard() {
     const newState = !ledStatus;
     setLEDStatus(newState);
     publish('ESP/sensor/control', newState ? '1' : '0');
-  };
-
-  const handleHistory = () => {
-    window.location.href = "/riwayat";
   };
 
   return (
@@ -105,7 +103,7 @@ export default function Dashboard() {
         </div>
 
         <div className="flex flex-col gap-10 pl-40 justify-start items-start">
-          <button onClick={handleHistory} className="bg-gray-500 text-black px-6 py-2 rounded-md hover:bg-gray-600 w-40 border border-black">
+          <button onClick={() => router.push('/riwayat')} className="bg-gray-500 text-black px-6 py-2 rounded-md hover:bg-gray-600 w-40 border border-black">
             Riwayat
           </button>
           <button

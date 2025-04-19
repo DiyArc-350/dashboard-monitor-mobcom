@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from 'next/navigation';
 
 type Sensor = {
   id: number;
@@ -11,8 +12,18 @@ type Sensor = {
 
 
 export default function Table({ data }: { data: Sensor[] }) {
+  const router = useRouter();
   return (
     <div className="overflow-x-auto p-4">
+      <div className='mb-4 flex justify-between items-between'>
+        <h1 className="text-3xl text-black mx-6 font-bold">Riwayat Sensor</h1>
+        <button
+          onClick={() => router.push('/dashboard')}
+          className="bg-blue-500 text-black px-4 py-2 rounded-md shadow-md hover:bg-blue-600 transition duration-200"
+        >
+          Kembali ke Dashboard
+        </button>
+      </div>
       <table className="min-w-full bg-slate-500 shadow-md rounded-lg">
         <thead>
           <tr className="bg-gray-100 dark:bg-slate-700 text-left text-slate-900 dark:text-gray-100">
