@@ -2,8 +2,8 @@ import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import { decrypt } from "@/app/lib/session"; // ✅ adjust path based on project structure
 
-const protectedRoutes = ["/dashboard"];
-const publicRoutes = ["/login"];
+const protectedRoutes = ["/dashboard", "/riwayat"];
+const publicRoutes = ["/login", "/"];
 
 export default async function middleware(req: NextRequest) {
   const path = req.nextUrl.pathname;
@@ -19,6 +19,10 @@ export default async function middleware(req: NextRequest) {
 
   if (isPublicRoute && session?.userId) {
     return NextResponse.redirect(new URL("/dashboard", req.nextUrl));
+  }
+
+  if (isPublicRoute && session?.userId) {
+    return NextResponse.redirect(new URL("/riwayat", req.nextUrl));
   }
 
   return NextResponse.next();
