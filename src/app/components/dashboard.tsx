@@ -25,9 +25,10 @@ export default function Dashboard() {
   useMqtt("ESP/sensor/Temperature", (msg) => setTemperature(msg));
   useMqtt("ESP/sensor/Intensitas", (msg) => setIntensity(msg));
 
-  const { publish } = useMqtt("ESP/sensor/LEDStatus", (msg) =>
+  const { publish } = useMqtt("ESP/sensor/LEDstatus", (msg) =>
     setLEDStatus(msg === "1")
   );
+  console.log("LED Status:", ledStatus);
 
   const toggle = () => {
     const newState = !ledStatus;
