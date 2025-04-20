@@ -28,7 +28,6 @@ export default function Dashboard() {
   const { publish } = useMqtt("ESP/sensor/LEDstatus", (msg) =>
     setLEDStatus(msg === "1")
   );
-  console.log("LED Status:", ledStatus);
 
   const toggle = () => {
     const newState = !ledStatus;
