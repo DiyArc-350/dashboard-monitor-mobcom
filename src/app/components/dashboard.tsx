@@ -46,7 +46,7 @@ export default function Dashboard() {
           <div className="mb-4">
             <p className="text-lg">Kualitas Udara</p>
             <div className="bg-white p-2 rounded-md border border-black text-center">
-              {ppmValue !== null ? ppmValue : <Spinner />}
+              {ppmValue !== null ? ppmValue+" PPM" : <Spinner />}
             </div>
           </div>
           <div>
@@ -63,13 +63,13 @@ export default function Dashboard() {
           <div className="mb-4">
             <p className="text-lg">Kelembaban</p>
             <div className="bg-white p-2 rounded-md border border-black text-center">
-              {humidity !== null ? humidity : <Spinner />}
+              {humidity !== null ? humidity + "%": <Spinner />}
             </div>
           </div>
           <div>
             <p className="text-lg">Suhu</p>
             <div className="bg-white p-2 rounded-md border border-black text-center">
-              {temperature !== null ? temperature : <Spinner />}
+              {temperature !== null ? temperature+" °C" : <Spinner />}
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@ export default function Dashboard() {
           <p className="text-xl font-bold mb-2">Status LED</p>
           <div className="text-sm italic mb-4 flex items-center gap-2">
             <span>intensitas cahaya:</span>
-            {intensity !== null ? <span>{intensity}</span> : <Spinner />}
+            {intensity !== null ? <span>{intensity} lux</span> : <Spinner />}
           </div>
           <div className="flex items-center justify-between">
             <label className="relative inline-flex items-center cursor-pointer">
